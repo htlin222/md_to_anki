@@ -12,7 +12,27 @@ This python script will add a piece of markdown file `.md` file to anki via [Ank
 
 ## Usage
 
-`python md_to_anki.py -f YOUR_MARKDOWN_FILE.md -d DECK_NAME`
+If you have a markdown file looks like
+
+```markdown
+---
+title: Title
+date: "2024-06-29"
+tag: whatever
+---
+
+# What is Anki?
+
+- Anki is a digital flashcard tool that uses spaced repetition to help users effectively memorize and learn various information.
+```
+
+You can run the script
+
+```bash
+python md_to_anki.py -f YOUR_MARKDOWN_FILE.md -d DECK_NAME`
+```
+
+The script will use Heading 1 as the Anki card front and place the subsequent content as the Anki card back. It will ignore any content before Heading 1, such as YAML front matter.
 
 ## Build
 
